@@ -1,0 +1,58 @@
+
+NAME: SOCIOM v.2.0
+FILE: SOCIOM.COM
+
+DESCRIPTION:
+  Short programm written to simplify some sociometric method
+  for teamforming of small military units such as squads, 
+  platoons or companies by their superriors.
+  Yeah :-) It has been written for military forces, but
+  it should be usable somehow in commercial world too.
+  Requestors say, the programm  made their method 100x faster 
+  in comparison to paperwork.
+
+  How does it work ? Using this program the sociometric method
+  still remains manual, but much more visual.
+  Program allows you to depict relationships between team members.
+  You enter unidirectional relationship of row owner to each
+  of column owner.
+  Relationships can be positive(+), negative(-) or none( ).
+  If positive or negative relationship are mutual, the you will
+  see that automaticaly. Positive(#) / Negative(!).
+
+  The result of this method should be an optimal 
+  leadership delegation for particular activities of the team.
+
+HISTORICAL:
+  I wrote it as a student, during the first semestry at Military Acabemy.
+  It was approximatelly at January-February 1996.
+  Requestor of that was my platoon commader.
+  Since 1993 till 2000 near to everything I wrote in Assmble language.
+  That's why this one has been written in assembly language too.
+
+REQUIREMENTS:
+  It's a snadalone .COM program.
+  It does not need any library or such.
+  MS-DOS version 3.30 on IBM-PC-XT 
+  with 640kB RAM, the CGA card (80x25ch resolution)
+  and some floppy drive should be enough.
+  Nativelly it should be able to run up to Windows XP SP2.
+  Later/Today it runs within BOSBOX application 
+  or on MS-DOS instance in VMware.
+
+COMPILING:
+  Originally it has been compiled by TASM.EXE version 2.02
+  and linked by TLINK.EXE version 3.0 by following two commands.
+  
+  TASM.EXE SOCIOM.ASM
+  TLINK.EXE SOCIOM.OBJ,SOCIOM.COM /t
+  
+  Source code SOCIOM.ASM (originally SOCIOM.ASC to distinguish
+  source codes of .COM programs from source codes of .EXE ones)
+  depends on TEXTY.INC (originally TEXTY.ICP)
+  and FILENAME.INC (originally FILENAME.ICP)
+  Both .INC files provides user interface .
+
+
+# --- end ---
+
