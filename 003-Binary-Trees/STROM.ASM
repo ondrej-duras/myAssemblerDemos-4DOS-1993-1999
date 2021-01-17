@@ -1,6 +1,12 @@
 ; STROM.ASM / STROM.COM - Ukazky prechadzania binarnych stromov
 ; 19971205, rtm. Ondrej DURAS (dury)
 ;
+;pre kompilaciu bol pouzivany TASM v2.02 a TLINK v3.01
+;=cc TASM.EXE STROM.ASM
+;=cc TLINK.EXE STROM.OBJ,STROM.COM /t
+;=cc DEL STROM.OBJ
+;=cc DEL STROM.MAP
+;
 ;POPIS:
 ; Ide iba o laboratorne cvicenie z predmetu algoritmizacia.
 ; Cielom je ukazat princip prechadzania binarnych stromov
@@ -21,7 +27,7 @@
 ; naslednevykona pozadovanu akciu s hodnotou uzla
 ; a nakoniec vykona rekurziu u praveho potomka.
 ;
-; Post-order:
+; Post-order prehladavanie:
 ; Najprv vykona rekurziu u laveho potomka,
 ; potom vykona rekurziu u praveho potomka
 ; a az na koniec vykona akciu s hodnotou uzla.
@@ -33,7 +39,21 @@
 ; Program mozno odstartovat bez argumentov, pricom
 ; sa strom naplni hodnotami z predvoleneho retazca
 ; maximalnej dlzky.
+; Ak zadamenejaky retazec ako agrument programu pre jeho starte,
+; potom znaky tohto retazcasa stanu hodnotamy v uzloch stromu.
 ; 
+;POZIADAVKY:
+; Zdrojovy kod pozostava z troch suborov:
+; STROM.ASM, STROM.INC a DLINE64G.INC .
+; Vysledkom vyssieuvedeneho prekladu je
+; jeden samostatne beziaci STROM.COM subor.
+; Nativne program bezi na pocitacoch s operacnym systemom DOS
+; a procesorom Intel 80 286 8MHz, 640kB RAM a videokartou VGA. 
+; "Nativne" program este vedel fungovat na Windows XP SP2.
+; Potom ho dnes este mozno pouzivat v DOSBOX-e.
+; Na pocitacoch s rychlejsim procesorom program problemy nerobil.
+;
+; ---
 
 	p286n
 prog	segment
